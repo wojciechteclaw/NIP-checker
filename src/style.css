@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 680px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* API key bar */
+.api-key-bar {
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.api-key-toggle {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  background: transparent;
+  color: #4361ee;
+  border: 1px solid #4361ee;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.api-key-toggle:hover {
+  background: #4361ee;
+  color: #fff;
+}
+
+.api-key-status {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.api-key-status.connected {
+  color: #2d6a4f;
+  font-weight: 600;
+}
+
+.api-key-panel {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.api-key-hint {
+  font-size: 0.82rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.api-key-hint a {
+  color: #4361ee;
+}
+
+.api-key-panel .input-group {
+  display: flex;
+  gap: 6px;
+}
+
+.api-key-panel input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+.api-key-panel input:focus {
+  border-color: #4361ee;
+}
+
+.api-key-panel button {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  background: #4361ee;
+}
+
+.api-key-panel button:hover {
+  background: #3a56d4;
+}
+
+.btn-danger {
+  background: #e63946 !important;
+}
+
+.btn-danger:hover {
+  background: #c5303c !important;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+}
+
+#nip-input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#nip-input:focus {
+  border-color: #4361ee;
+}
+
+#search-btn {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  background: #4361ee;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#search-btn:hover {
+  background: #3a56d4;
+}
+
+#search-btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #e63946;
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Loading */
+#loading {
+  text-align: center;
+  margin-top: 40px;
+  color: #666;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ddd;
+  border-top-color: #4361ee;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 12px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Results */
+#result {
+  margin-top: 32px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #4361ee;
+}
+
+#result h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0;
+}
+
+.copy-btn {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  background: #4361ee;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.copy-btn:hover {
+  background: #3a56d4;
+}
+
+.copy-btn.copied {
+  background: #2d6a4f;
+}
+
+#result h3 {
+  font-size: 1.1rem;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: #4361ee;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+td:first-child {
+  font-weight: 600;
+  width: 200px;
+  color: #555;
+  white-space: nowrap;
+}
+
+ul {
+  list-style: none;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+ul li {
+  padding: 8px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+.status-active {
+  color: #2d6a4f;
+  font-weight: 600;
+}
+
+.status-inactive {
+  color: #e63946;
+  font-weight: 600;
+}
